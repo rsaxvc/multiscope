@@ -5,15 +5,17 @@
 #include "../streams/bits/writer.hpp"
 
 #include <vector>
-
-class hdlc16: public bits::writer, public frames::reader
+namespace framers
 	{
-	public:
-		void insert( const frames::buffer & );
-	private:
-		void encoder_insert( bool bit );
-		int num_contig_ones;
-		size_t output_cnt;
-		std::vector<bool> bitbuf;
-	};
+	class hdlc16: public bits::writer, public frames::reader
+		{
+		public:
+			void insert( const frames::buffer & );
+		private:
+			void encoder_insert( bool bit );
+			int num_contig_ones;
+			size_t output_cnt;
+			std::vector<bool> bitbuf;
+		};
+	}
 #endif
