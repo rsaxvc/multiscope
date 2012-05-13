@@ -1,8 +1,9 @@
-CFLAGS=-O0 -g -Wall
+CFLAGS=-O0 -g -Wall -I .
 CXXFLAGS=$(CFLAGS)
 LDFLAGS=
-SOURCES=`ls *.cpp`
-BUILDS=test_compile
+SOURCES=`find . | grep "\.cpp"`
+TESTS=test_compile
+BUILDS=$(TESTS)
 all: .depend $(BUILDS)
 
 .depend:
@@ -11,8 +12,11 @@ all: .depend $(BUILDS)
 -include .depend
 
 test_compile:\
-	test_compile.o
+	tests/test_compile.o\
+	framers/hdlc.o\
+	streams/bytes/writer.o\
+	streams/bits/writer.o
 	$(CXX) -o $@ $(CXXFLAGS) $(LDFLAGS) $^
 
 clean:
-	rm -f *.o .depend $(BUILDS)
+	rm -f .depend $(BUILDS) `find . | grep "\.o"`
