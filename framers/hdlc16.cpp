@@ -1,4 +1,4 @@
-#include "framers/hdlc.hpp"
+#include "framers/hdlc16.hpp"
 #include "crc/hdlc16.hpp"
 
 #include <stdint.h>
@@ -12,7 +12,7 @@ static inline bool get_bit( const frames::frame & buf, size_t bit_idx )
 return ( buf[ bit_idx >> 3 ] >> ( bit_idx & 0x07 ) ) & 1;
 }
 
-void hdlc::insert( const frames::buffer & buf )
+void hdlc16::insert( const frames::buffer & buf )
 {
 crc::hdlc16 crc;
 uint8_t crc_hi;
@@ -66,7 +66,7 @@ for( frames::buffer::const_iterator frame_iterator = buf.begin(); frame_iterator
 	}
 }
 
-void hdlc::encoder_insert( bool bit )
+void hdlc16::encoder_insert( bool bit )
 {
 bitbuf.push_back( bit );
 output_cnt++;

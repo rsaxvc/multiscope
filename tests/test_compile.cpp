@@ -9,7 +9,7 @@
 #include "streams/bytes/reader.hpp"
 #include "streams/bytes/writer.hpp"
 
-#include "framers/hdlc.hpp"
+#include "framers/hdlc16.hpp"
 #include "framers/kiss.hpp"
 #include "framers/sixpack.hpp"
 

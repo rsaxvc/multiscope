@@ -1,12 +1,12 @@
-#ifndef FRAMER_HDLC_HPP
-#define FRAMER_HDLC_HPP
+#ifndef FRAMER_HDLC16_HPP
+#define FRAMER_HDLC16_HPP
 
 #include "../streams/frames/reader.hpp"
 #include "../streams/bits/writer.hpp"
 
 #include <vector>
 
-class hdlc: public bits::writer, public frames::reader
+class hdlc16: public bits::writer, public frames::reader
 	{
 	public:
 		void insert( const frames::buffer & );
