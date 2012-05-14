@@ -10,7 +10,7 @@ namespace bytes
 	class reader
 		{
 		public:
-			virtual void insert( const buffer & );
+			virtual void insert( const buffer & )=0;
 		};
 	}
 #endif

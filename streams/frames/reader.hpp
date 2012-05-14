@@ -10,7 +10,7 @@ namespace frames
 	class reader
 		{
 		public:
-			void insert( const buffer & );
+			virtual void insert( const buffer & )=0;
 		};
 	}
 #endif
