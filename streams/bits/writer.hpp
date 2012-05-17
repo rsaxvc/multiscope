@@ -11,6 +11,7 @@ namespace bits
 		{
 		public:
 			void attach( reader & );
+			void detach( reader & );
 		protected:
 			std::list<reader*> registered;
 			void broadcast( const std::vector<bool> & );

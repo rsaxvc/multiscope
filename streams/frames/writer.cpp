@@ -2,10 +2,9 @@
 #include "writer.hpp"
 
 #include <algorithm>
-
 #include <cassert>
 
-namespace bits
+namespace frames
     {
 	void writer::attach( reader & r )
 		{
@@ -32,5 +31,11 @@ namespace bits
             (*It)->insert( buf );
             }
         }
+
+	writer::~writer()
+		{
+		//everyone should've disconeccted by now
+		assert( registered.size() == 0 );
+		}
     }
 

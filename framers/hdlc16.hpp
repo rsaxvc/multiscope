@@ -5,6 +5,7 @@
 #include "../streams/bits/writer.hpp"
 
 #include <vector>
+#include <ostream>
 namespace framers
 	{
 	class hdlc16: public bits::writer, public frames::reader
@@ -14,8 +15,9 @@ namespace framers
 		private:
 			void encoder_insert( bool bit );
 			int num_contig_ones;
-			size_t output_cnt;
 			std::vector<bool> bitbuf;
+
+			friend std::ostream & operator<<( std::ostream &, const hdlc16 &);
 		};
 	}
 #endif

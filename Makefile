@@ -2,7 +2,7 @@ CFLAGS=-O0 -g -Wall -I .
 CXXFLAGS=$(CFLAGS)
 LDFLAGS=
 SOURCES=`find . | grep "\.cpp"`
-TESTS=test_compile
+TESTS=test_compile test_hdlc16
 BUILDS=$(TESTS)
 all: .depend $(BUILDS)
 
@@ -11,12 +11,24 @@ all: .depend $(BUILDS)
 
 -include .depend
 
+test_hdlc16:\
+	tests/test_hdlc16.o\
+	framers/hdlc16.o\
+	deframers/hdlc16.o\
+	streams/bits/writer.o\
+	streams/frames/writer.o\
+	outputs/stdout/frame.o
+	$(CXX) -o $@ $(LDFLAGS) $^
+
 test_compile:\
 	tests/test_compile.o\
 	framers/hdlc16.o\
+	deframers/hdlc16.o\
+	streams/bits/writer.o\
 	streams/bytes/writer.o\
-	streams/bits/writer.o
-	$(CXX) -o $@ $(CXXFLAGS) $(LDFLAGS) $^
+	streams/frames/writer.o\
+	outputs/stdout/frame.o
+	$(CXX) -o $@ $(LDFLAGS) $^
 
 clean:
 	rm -f .depend $(BUILDS) `find . | grep "\.o"`

@@ -11,7 +11,10 @@ namespace frames
 		{
 		public:
 			void attach(reader&);
-		private:
+			void detach( reader & );
+			~writer();
+
+		protected:
 			std::list<reader*>registered;
 			void broadcast( const buffer & );
 		};
