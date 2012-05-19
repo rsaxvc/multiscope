@@ -18,7 +18,7 @@ the_buffer.push_back( the_frame );
 
 framers::hdlc16 framer;
 deframers::hdlc16 deframer;
-output_stdout::frame frame_out;
+output::stdout::frame frame_out;
 
 framer.attach( deframer );
 deframer.attach( frame_out );

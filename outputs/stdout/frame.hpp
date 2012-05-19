@@ -3,12 +3,15 @@
 
 #include "../../streams/frames/reader.hpp"
 
-namespace output_stdout
+namespace output
 	{
-	class frame: public frames::reader
+	namespace stdout
 		{
-		public:
-			void insert( const frames::buffer & );
-		};
+		class frame: public frames::reader
+			{
+			public:
+				void insert( const frames::buffer & );
+			};
+		}
 	}
 #endif
