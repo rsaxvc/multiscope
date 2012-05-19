@@ -17,7 +17,8 @@ test_hdlc16:\
 	deframers/hdlc16.o\
 	streams/bits/writer.o\
 	streams/frames/writer.o\
-	outputs/stdout/frame.o
+	outputs/stdout/frame.o\
+	outputs/stdout/frame_hex.o
 	$(CXX) -o $@ $(LDFLAGS) $^
 
 test_compile:\
@@ -25,6 +26,7 @@ test_compile:\
 	downsamplers/nearest.o\
 	framers/hdlc16.o\
 	outputs/stdout/frame.o\
+	outputs/stdout/frame_hex.o\
 	streams/bits/writer.o\
 	streams/bytes/writer.o\
 	streams/frames/writer.o\
