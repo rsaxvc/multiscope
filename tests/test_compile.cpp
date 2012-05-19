@@ -3,6 +3,9 @@
 #include "deframers/deframer.hpp"
 #include "deframers/hdlc16.hpp"
 
+#include "downsamplers/downsampler.hpp"
+#include "downsamplers/nearest.hpp"
+
 #include "framers/hdlc16.hpp"
 #include "framers/kiss.hpp"
 #include "framers/sixpack.hpp"

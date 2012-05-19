@@ -1,6 +1,8 @@
 #ifndef SAMPLES_BUFFER_HPP
 #define SAMPLES_BUFFER_HPP
 
+#include <cstddef>
+
 namespace samples
 	{
 	enum sample_type
