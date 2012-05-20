@@ -4,11 +4,13 @@
 #include "../../streams/samples/reader.hpp"
 
 #include "plot.hpp"
-class xy : public plot
+namespace plots
 	{
-	std::string getName()const{return "XY";};
-	double getXRes();
-	double getYRes();
-	};
-
+	class xy : public plot
+		{
+		std::string getName()const{return "XY";};
+		double getXRes();
+		double getYRes();
+		};
+	}
 #endif

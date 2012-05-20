@@ -3,10 +3,12 @@
 
 #include "plot.hpp"
 
-class polar : public plot
+namespace plots
 	{
-	std::string getName()const{return "polar";};
-	double getRRes();
-	};
-
+	class polar : public plot
+		{
+		std::string getName()const{return "polar";};
+		double getRRes();
+		};
+	}
 #endif

@@ -1,14 +1,14 @@
 #ifndef PLOT_PLOT_HPP
 #define PLOT_PLOT_HPP
 
-#include <string>
+#include "streams/samples/reader.hpp"
 
-class plot
+namespace plots
 	{
-	public:
-		std::string getName()const;
-		int getWidth();
-		int getHeight();
-	};
-
+	class plot
+		{
+		public:
+			virtual std::string getName()const;
+		};
+	}
 #endif

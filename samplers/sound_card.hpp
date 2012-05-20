@@ -3,4 +3,8 @@
 
 #include "sampler.hpp"
 
+namespace samplers
+	{
+	}
+
 #endif
