@@ -3,6 +3,8 @@
 #include "deframers/deframer.hpp"
 #include "deframers/hdlc16.hpp"
 
+#include "demodulators/frequency_detector.hpp"
+
 #include "downsamplers/downsampler.hpp"
 #include "downsamplers/nearest.hpp"
 
