@@ -20,6 +20,9 @@
 #include "outputs/plots/plot.hpp"
 
 #include "samplers/sampler.hpp"
+#include "samplers/oscillator.hpp"
+#include "samplers/sinewave.hpp"
+#include "samplers/squarewave.hpp"
 
 #include "streams/frames/reader.hpp"
 #include "streams/frames/writer.hpp"
