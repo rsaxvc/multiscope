@@ -7,16 +7,17 @@ namespace samples
 	{
 	enum sample_type
 		{
-		SAMPLE_S16,
-		SAMPLE_S8,
-		SAMPLE_F32,
-		SAMPLE_F64
+		S16,
+		S8,
+		F32,
+		F64
 		};
 	struct buffer
 		{
 		size_t num_samples;
 		sample_type type;
 		const void * data;
+		double operator[]( size_t idx )const;
 		};
 	}
 

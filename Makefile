@@ -1,4 +1,4 @@
-CFLAGS=-O0 -g -Wall -I .
+CFLAGS=-O0 -g -Wall -I . -Wall -Wextra
 CXXFLAGS=$(CFLAGS)
 LDFLAGS=
 SOURCES=`find . | grep "\.cpp"`
@@ -24,12 +24,14 @@ test_hdlc16:\
 test_compile:\
 	deframers/hdlc16.o\
 	downsamplers/nearest.o\
+	filters/exponential_smoother.o\
 	framers/hdlc16.o\
 	outputs/stdout/frame.o\
 	outputs/stdout/frame_hex.o\
 	streams/bits/writer.o\
 	streams/bytes/writer.o\
 	streams/frames/writer.o\
+	streams/samples/buffer.o\
 	streams/samples/writer.o\
 	tests/test_compile.o
 	$(CXX) -o $@ $(LDFLAGS) $^
