@@ -12,7 +12,7 @@
 #include "framers/kiss.hpp"
 #include "framers/sixpack.hpp"
 
-#include "modulators/afsk.hpp"
+#include "modulators/fsk.hpp"
 #include "modulators/bpsk.hpp"
 #include "modulators/gmsk.hpp"
 
