@@ -1,3 +1,5 @@
+CC=gocache gcc
+CXX=gocache g++
 CFLAGS=-O0 -g -Wall -I . -Wall -Wextra
 CXXFLAGS=$(CFLAGS)
 LDFLAGS=
