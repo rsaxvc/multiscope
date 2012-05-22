@@ -1,5 +1,5 @@
-CC=gocache gcc
-CXX=gocache g++
+CC=ccache gcc
+CXX=ccache g++
 CFLAGS=-O0 -g -Wall -I . -Wall -Wextra
 CXXFLAGS=$(CFLAGS)
 LDFLAGS=
@@ -43,6 +43,7 @@ test_squarewave:\
 
 test_compile:\
 	deframers/hdlc16.o\
+	demodulators/fsk.o\
 	downsamplers/nearest.o\
 	filters/exponential_smoother.o\
 	framers/hdlc16.o\
